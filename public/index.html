@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mosibudi High School</title>
+
+<style>
+:root {
+    --navy: #102b50;
+    --blue: #1769aa;
+    --gold: #eabf54;
+    --light: #f3f6fa;
+    --white: #ffffff;
+    --text: #27364a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--navy);
+    color: white;
+    padding: 22px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    display: block;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    background: linear-gradient(120deg, #102b50, #1769aa);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 6vw, 55px);
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 13px 24px;
+    margin: 20px 8px 0;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-blue {
+    background: var(--blue);
+    color: white;
+}
+
+section {
+    padding: 65px 6%;
+    scroll-margin-top: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--navy);
+}
+
+.section-title h2 {
+    font-size: 30px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 14px rgba(0,0,0,.06);
+}
+
+.card h3 {
+    color: var(--blue);
+    margin-bottom: 12px;
+}
+
+.card-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.dark-section {
+    background: var(--navy);
+    color: white;
+}
+
+.dark-section h2,
+.dark-section h3 {
+    color: white;
+}
+
+.dark-section .card {
+    color: var(--text);
+}
+
+form {
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 13px;
+    margin-top: 6px;
+    border: 1px solid #ccd4df;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+button {
+    font-family: inherit;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    color: var(--text);
+}
+
+th, td {
+    padding: 13px;
+    border: 1px solid #e0e5eb;
+    text-align: left;
+}
+
+th {
+    background: var(--navy);
+    color: white;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+.portal-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.portal-links a {
+    background: white;
+    color: var(--navy);
+    padding: 15px 22px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.notice {
+    background: #fff5d8;
+    border-left: 4px solid var(--gold);
+    padding: 15px;
+    margin: 15px 0;
+}
+
+footer {
+    background: #091c35;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+@media(max-width:700px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 65px 15px;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        MOSIBUDI HIGH SCHOOL
+        <span>EDUCATION • DISCIPLINE • EXCELLENCE</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#academics">Academics</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#learners">Learners</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <h1>Welcome to Mosibudi High School</h1>
+
+    <p>
+        Empowering young minds through quality education,
+        discipline, leadership and academic excellence.
+    </p>
+
+    <a href="#admissions" class="btn">
+        Apply for Admission
+    </a>
+
+    <a href="#about" class="btn">
+        Discover Our School
+    </a>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About Our School</h2>
+            <p>Building a brighter future through education.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>
+                    To provide quality education and develop
+                    responsible, confident and knowledgeable
+                    learners.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>
+                    To become a centre of academic excellence
+                    that prepares learners for a successful future.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Our Values</h3>
+                <p>
+                    Respect, integrity, discipline, teamwork,
+                    responsibility and excellence.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ADMISSIONS -->
+
+<section id="admissions" class="dark-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Online Learner Admissions</h2>
+            <p>Apply to join Mosibudi High School.</p>
+        </div>
+
+        <div class="notice">
+            This is a demonstration registration form.
+            Do not submit real learner information until
+            the secure registration system is connected.
+        </div>
+
+        <form id="admissionForm">
+
+            <h3>Learner Information</h3>
+
+            <label>Full Name</label>
+            <input type="text" required>
+
+            <label>Date of Birth</label>
+            <input type="date" required>
+
+            <label>Gender</label>
+            <select required>
+                <option value="">Select gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+            </select>
+
+            <label>Grade Applying For</label>
+            <select required>
+                <option value="">Choose grade</option>
+                <option>Grade 8</option>
+                <option>Grade 9</option>
+                <option>Grade 10</option>
+                <option>Grade 11</option>
+                <option>Grade 12</option>
+            </select>
+
+            <label>Previous School</label>
+            <input type="text">
+
+            <hr style="margin:25px 0">
+
+            <h3>Parent / Guardian Information</h3>
+
+            <label>Parent Full Name</label>
+            <input type="text" required>
+
+            <label>Contact Number</label>
+            <input type="tel" required>
+
+            <label>Email Address</label>
+            <input type="email" required>
+
+            <label>Residential Address</label>
+            <textarea required></textarea>
+
+            <button type="submit" class="btn btn-blue">
+                Submit Application
+            </button>
+
+        </form>
+    </div>
+</section>
+
+<!-- ACADEMICS -->
+
+<section id="academics">
+    <div class="container">
+        <div class="section-title">
+            <h2>Academic Programme</h2>
+            <p>Grades 8 to 12 | South African CAPS framework</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3>Grades 8 & 9</h3>
+                <p>
+                    Senior Phase learning, foundational
+                    knowledge and subject development.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎓</div>
+                <h3>Grades 10 & 11</h3>
+                <p>
+                    Further subject specialization,
+                    assessments and examination preparation.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏆</div>
+                <h3>Grade 12</h3>
+                <p>
+                    Matric preparation, final assessments
+                    and preparation for further studies.
+                </p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:25px">
+            <h3>Subjects</h3>
+            <p>
+                English, Mathematics, Mathematical Literacy,
+                Life Orientation, Natural Sciences, Social Sciences,
+                Physical Sciences, Life Sciences, Geography,
+                History, Accounting, Business Studies,
+                Economics and other approved subjects.
+            </p>
+            <p style="margin-top:10px">
+                Actual subject offerings will be confirmed
+                by the school.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- TEACHERS -->
+
+<section id="teachers" class="dark-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Teacher Portal</h2>
+            <p>Teaching schedules and academic activities.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Teacher Timetables</h3>
+                <p>View weekly teaching schedules and assigned classes.</p>
+            </div>
+
+            <div class="card">
+                <h3>Attendance</h3>
+                <p>Manage daily learner attendance and class registers.</p>
+            </div>
+
+            <div class="card">
+                <h3>Teaching Materials</h3>
+                <p>Prepare lesson plans, notes and learning materials.</p>
+            </div>
+
+            <div class="card">
+                <h3>Assessments</h3>
+                <p>Manage tests, assignments and learner performance.</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:25px">
+            <h3>Sample Teacher Timetable</h3>
+            <div class="table-wrap">
+                <table>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>08:00 - 09:00</td>
+                        <td>Mathematics</td>
+                        <td>Grade 8</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>09:00 - 10:00</td>
+                        <td>English</td>
+                        <td>Grade 9</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>10:00 - 11:00</td>
+                        <td>Physical Sciences</td>
+                        <td>Grade 11</td>
+                    </tr>
+                </table>
+            </div>
+            <p style="margin-top:15px">
+                These are sample entries, not actual teacher assignments.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- LEARNERS -->
+
+<section id="learners">
+    <div class="container">
+        <div class="section-title">
+            <h2>Learner Portal</h2>
+            <p>Everything learners need for their school journey.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">📖</div>
+                <h3>Learning Materials</h3>
+                <p>Access class notes and educational resources.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>Homework</h3>
+                <p>View homework and assignment instructions.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📅</div>
+                <h3>Examination Timetable</h3>
+                <p>Check upcoming tests and examinations.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Academic Results</h3>
+                <p>View academic performance and progress reports.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ADMINISTRATION -->
+
+<section class="dark-section" id="admin">
+    <div class="container">
+        <div class="section-title">
+            <h2>School Administration</h2>
+            <p>Management tools for authorized school staff.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>👨‍🎓 Learner Management</h3>
+                <p>Manage learner records and grade allocations.</p>
+            </div>
+
+            <div class="card">
+                <h3>👩‍🏫 Teacher Management</h3>
+                <p>Manage teacher profiles and assignments.</p>
+            </div>
+
+            <div class="card">
+                <h3>📋 Admissions</h3>
+                <p>Review and approve learner applications.</p>
+            </div>
+
+            <div class="card">
+                <h3>📢 Announcements</h3>
+                <p>Publish important school notices and updates.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ANNOUNCEMENTS -->
+
+<section id="announcements">
+    <div class="container">
+        <div class="section-title">
+            <h2>School News & Announcements</h2>
+        </div>
+
+        <div class="card">
+            <h3>Welcome to Mosibudi High School</h3>
+            <p>
+                Important school news, events, examination dates
+                and announcements will be published here.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>Contact Mosibudi High School</h2>
+            <p>We would love to hear from you.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>📍 Address</h3>
+                <p>School address to be added.</p>
+            </div>
+
+            <div class="card">
+                <h3>📞 Telephone</h3>
+                <p>School telephone number to be added.</p>
+            </div>
+
+            <div class="card">
+                <h3>✉️ Email</h3>
+                <p>School email address to be added.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h3>MOSIBUDI HIGH SCHOOL</h3>
+    <p>Education • Discipline • Excellence</p>
+    <p>Grades 8 - 12</p>
+    <p>© 2026 Mosibudi High School. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.getElementById("admissionForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert(
+        "This is a demonstration. Your application " +
+        "has not been saved or sent to the school. " +
+        "The secure registration system still needs to be connected."
+    );
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
